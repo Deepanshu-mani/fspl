@@ -1,19 +1,32 @@
-"use client";
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import "@/app/globals.css";
 
-import Sidebar from "@/components/Sidebar";
-import { useTheme } from "@/lib/theme";
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap",
+});
 
-export default function AppLayout({
+const jetbrainsMono = JetBrains_Mono({
+    subsets: ["latin"],
+    variable: "--font-jetbrains-mono",
+    display: "swap",
+});
+
+export const metadata: Metadata = {
+    title: "aps - Cybersecurity",
+    description: "Expert level Cybersecurity in hours not weeks.",
+};
+
+export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const { dark, toggle: toggleDark } = useTheme();
-
     return (
-        <div className="flex min-h-screen bg-bg">
-            <Sidebar dark={dark} toggleDark={toggleDark} />
-            {children}
-        </div>
+        <html lang="en" className={`dark ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+            <body>{children}</body>
+        </html>
     );
 }

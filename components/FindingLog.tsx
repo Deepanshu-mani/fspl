@@ -32,13 +32,13 @@ const findings = [
 
 export default function FindingLog() {
     return (
-        <div className="w-[380px] flex flex-col shrink-0 border-l border-border">
-            <div className="px-4 py-3 border-b border-border shrink-0">
+        <div className="w-[380px] flex flex-col shrink-0 border-l border-border overflow-hidden">
+            <div className="px-4 py-2.5 border-b border-border shrink-0">
                 <span className="text-[13px] font-semibold text-text">Finding Log</span>
             </div>
-            <div className="flex-1 overflow-auto p-3 flex flex-col gap-2.5">
+            <div className="flex-1 overflow-auto p-3 flex flex-col gap-2.5 bg-bg">
                 {findings.map((f, i) => (
-                    <div key={i} className="bg-surface-2 rounded-lg border border-card-border p-3.5">
+                    <div key={i} className="bg-surface rounded-lg border border-card-border p-3.5">
                         <div className="flex items-center justify-between mb-1.5">
                             <span
                                 className="text-[11px] font-bold py-0.5 px-2 rounded text-white"

@@ -22,7 +22,7 @@ function renderLogText(parts: LogPart[]): ReactNode {
         if (typeof p === "string") return <span key={i}>{p}</span>;
         if (p.link) return <span key={i} className="text-teal underline">{p.link}</span>;
         if (p.quote) return <span key={i} className="text-teal">{p.quote}</span>;
-        if (p.code) return <span key={i} className="bg-white/5 px-1.5 rounded font-mono text-gray-200">{p.code}</span>;
+        if (p.code) return <span key={i} className="bg-black dark:bg-gray-700 px-1.5 rounded-lg font-mono text-white dark:text-text">{p.code}</span>;
         if (p.highlight) return <span key={i} className="bg-teal/15 text-teal px-1.5 rounded">{p.highlight}</span>;
         if (p.bold) return <span key={i} className="text-critical font-semibold">{p.bold.replace(/\*\*/g, "")}</span>;
         return null;
@@ -33,14 +33,14 @@ export default function LiveConsole() {
     const [activeTab, setActiveTab] = useState("activity");
 
     return (
-        <div className="flex-1 bg-surface rounded-[10px] border border-border flex flex-col overflow-hidden">
+        <div className="flex-1 flex flex-col overflow-hidden">
             {/* Console header */}
             <div className="px-5 py-3 border-b border-border flex items-center gap-3 shrink-0">
                 <div className="w-2 h-2 rounded-full bg-teal shadow-[0_0_6px_var(--color-teal)]" />
                 <span className="text-sm font-semibold text-text whitespace-nowrap">Live Scan Console</span>
-                <div className="flex items-center gap-1.5 bg-surface-2 rounded-md px-2.5 py-0.5">
-                    <Icon name="clock" size={12} />
-                    <span className="text-xs text-text-muted">Running...</span>
+                <div className="flex items-center gap-1.5 bg-white rounded-full px-2.5 py-0.5">
+                    <Icon name="clock" size={12} color="#999" />
+                    <span className="text-xs text-gray-400">Running...</span>
                 </div>
                 <div className="ml-auto flex gap-2">
                     <Icon name="chevronDown" size={16} />
@@ -71,7 +71,7 @@ export default function LiveConsole() {
                     </div>
 
                     {/* Log content */}
-                    <div className="flex-1 overflow-auto px-5 py-4 font-mono text-[12.5px] leading-relaxed">
+                    <div className="flex-1 overflow-auto px-5 py-4 font-mono text-[12.5px] leading-relaxed bg-bg">
                         {logLines.map((line, i) => (
                             <div key={i} className="mb-3">
                                 <span className="text-text-muted">[{line.time}]</span>{" "}
