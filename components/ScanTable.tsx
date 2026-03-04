@@ -85,7 +85,7 @@ export default function ScanTable({ onNavigate }: ScanTableProps) {
                             <div
                                 key={i}
                                 onClick={() => onNavigate("/scan")}
-                                className="grid grid-cols-[2fr_1fr_1fr_2fr_1.5fr_1fr] px-6 py-3 cursor-pointer bg-surface hover:bg-surface-2 transition-colors items-center border-b border-border last:border-b-0"
+                                className="grid grid-cols-[2fr_1fr_1fr_2fr_1.5fr_1fr] px-6 py-3 cursor-pointer bg-surface hover:bg-surface-2 transition-colors items-center"
                             >
                                 <span className="text-[13px] font-semibold text-text">{row.name}</span>
                                 <span className="text-[13px] text-text-sub">{row.type}</span>

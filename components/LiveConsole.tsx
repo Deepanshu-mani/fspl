@@ -38,7 +38,7 @@ export default function LiveConsole() {
             <div className="px-5 py-3 border-b border-border flex items-center gap-3 shrink-0">
                 <div className="w-2 h-2 rounded-full bg-teal shadow-[0_0_6px_var(--color-teal)]" />
                 <span className="text-sm font-semibold text-text whitespace-nowrap">Live Scan Console</span>
-                <div className="flex items-center gap-1.5 bg-white rounded-full px-2.5 py-0.5">
+                <div className="flex items-center gap-1.5 bg-gray-100  dark:bg-white rounded-full px-2.5 py-0.5">
                     <Icon name="clock" size={12} color="#999" />
                     <span className="text-xs text-gray-400">Running...</span>
                 </div>
